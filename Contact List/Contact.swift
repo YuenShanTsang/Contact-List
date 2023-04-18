@@ -9,13 +9,15 @@ import Foundation
 
 class Contact {
     var name: String
-    var phoneNumber: Int
+    var phoneNumber: String
     var email: String
+    var address: String
     
-    init(name: String, phoneNumber: Int, email: String) {
+    init(name: String, phoneNumber: String, email: String, address: String) {
         self.name = name
         self.phoneNumber = phoneNumber
         self.email = email
+        self.address = address
     }
 
 }
