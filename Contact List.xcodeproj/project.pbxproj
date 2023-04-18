@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		4B8A13FA29ECCB9700F9941E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A13F929ECCB9700F9941E /* AppDelegate.swift */; };
 		4B8A13FC29ECCB9700F9941E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A13FB29ECCB9700F9941E /* SceneDelegate.swift */; };
-		4B8A13FE29ECCB9700F9941E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A13FD29ECCB9700F9941E /* ViewController.swift */; };
 		4B8A140129ECCB9700F9941E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A13FF29ECCB9700F9941E /* Main.storyboard */; };
 		4B8A140329ECCB9800F9941E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A140229ECCB9800F9941E /* Assets.xcassets */; };
 		4B8A140629ECCB9800F9941E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8A140429ECCB9800F9941E /* LaunchScreen.storyboard */; };
 		4B8A141129ECCB9800F9941E /* Contact_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A141029ECCB9800F9941E /* Contact_ListTests.swift */; };
 		4B8A141B29ECCB9800F9941E /* Contact_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A141A29ECCB9800F9941E /* Contact_ListUITests.swift */; };
 		4B8A141D29ECCB9800F9941E /* Contact_ListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A141C29ECCB9800F9941E /* Contact_ListUITestsLaunchTests.swift */; };
+		4B8A142A29ECDF0400F9941E /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8A142929ECDF0400F9941E /* ContactTableViewController.swift */; };
+		4BCED35329ECE99A00AA5DF9 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCED35229ECE99A00AA5DF9 /* Contact.swift */; };
+		4BE27A6729EDD0FF00121C59 /* ContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE27A6629EDD0FF00121C59 /* ContactList.swift */; };
+		4BE27A6929EE2D6100121C59 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE27A6829EE2D6100121C59 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +42,6 @@
 		4B8A13F629ECCB9700F9941E /* Contact List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contact List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8A13F929ECCB9700F9941E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B8A13FB29ECCB9700F9941E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4B8A13FD29ECCB9700F9941E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B8A140029ECCB9700F9941E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B8A140229ECCB9800F9941E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B8A140529ECCB9800F9941E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		4B8A141629ECCB9800F9941E /* Contact ListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Contact ListUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8A141A29ECCB9800F9941E /* Contact_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_ListUITests.swift; sourceTree = "<group>"; };
 		4B8A141C29ECCB9800F9941E /* Contact_ListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_ListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4B8A142929ECDF0400F9941E /* ContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
+		4BCED35229ECE99A00AA5DF9 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		4BE27A6629EDD0FF00121C59 /* ContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactList.swift; sourceTree = "<group>"; };
+		4BE27A6829EE2D6100121C59 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +107,10 @@
 			children = (
 				4B8A13F929ECCB9700F9941E /* AppDelegate.swift */,
 				4B8A13FB29ECCB9700F9941E /* SceneDelegate.swift */,
-				4B8A13FD29ECCB9700F9941E /* ViewController.swift */,
+				4B8A142929ECDF0400F9941E /* ContactTableViewController.swift */,
+				4BE27A6829EE2D6100121C59 /* DetailsViewController.swift */,
+				4BCED35229ECE99A00AA5DF9 /* Contact.swift */,
+				4BE27A6629EDD0FF00121C59 /* ContactList.swift */,
 				4B8A13FF29ECCB9700F9941E /* Main.storyboard */,
 				4B8A140229ECCB9800F9941E /* Assets.xcassets */,
 				4B8A140429ECCB9800F9941E /* LaunchScreen.storyboard */,
@@ -258,9 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B8A13FE29ECCB9700F9941E /* ViewController.swift in Sources */,
+				4BCED35329ECE99A00AA5DF9 /* Contact.swift in Sources */,
 				4B8A13FA29ECCB9700F9941E /* AppDelegate.swift in Sources */,
 				4B8A13FC29ECCB9700F9941E /* SceneDelegate.swift in Sources */,
+				4B8A142A29ECDF0400F9941E /* ContactTableViewController.swift in Sources */,
+				4BE27A6729EDD0FF00121C59 /* ContactList.swift in Sources */,
+				4BE27A6929EE2D6100121C59 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
