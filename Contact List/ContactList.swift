@@ -9,12 +9,32 @@ import Foundation
 
 class ContactList{
     var contacts: [Contact] = []
+    private let contactURL: URL = {
+        let documentDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = documentDirectories.first!
+        return documentDirectory.appending(path: "contact.archive")
+    }()
     
     init(){
-        contacts.append(Contact(name: "Clary", phoneNumber: "(123)456-7890", email: "email1@gmail.com", address: "adevett"))
-        contacts.append(Contact(name: "A", phoneNumber: "112343435", email: "email2@gmail.com", address: "adevett"))
-        contacts.append(Contact(name: "B", phoneNumber: "32144352", email: "email3@gmail.com", address: "adevett"))
-        contacts.append(Contact(name: "joshua.vandermost", phoneNumber: "+1 (123)456-7890", email: "joshua.vandermost@cambriancollege.ca", address: "adevevdfrvbgftbdrftgbtdrfbhtrgbhgfnyjnuyjtjnntyjhytjuyrtt"))
+        print(contactURL)
+        
+        let data = try? Data(contentsOf: contactURL)
+        
+        if data == nil { return }
+        
+        contacts = try! NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: Contact.self, from: data!)!
+        
+    }
+    
+    func save(){
+        do{
+            let encodedContacts = try NSKeyedArchiver.archivedData(withRootObject: contacts, requiringSecureCoding: true)
+            try encodedContacts.write(to: contactURL)
+            print("All objects were saved")
+        } catch let err{
+            preconditionFailure(err.localizedDescription)
+        }
+       
     }
     
     func delete(at indexPath: IndexPath){
