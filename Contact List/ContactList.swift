@@ -11,10 +11,10 @@ class ContactList{
     var contacts: [Contact] = []
     
     init(){
-        contacts.append(Contact(name: "Clary", phoneNumber: "12345678", email: "email1@gmail.com", address: "adevett"))
+        contacts.append(Contact(name: "Clary", phoneNumber: "(123)456-7890", email: "email1@gmail.com", address: "adevett"))
         contacts.append(Contact(name: "A", phoneNumber: "112343435", email: "email2@gmail.com", address: "adevett"))
         contacts.append(Contact(name: "B", phoneNumber: "32144352", email: "email3@gmail.com", address: "adevett"))
-        contacts.append(Contact(name: "C", phoneNumber: "32543543", email: "email4@gmail.com", address: "adevett"))
+        contacts.append(Contact(name: "joshua.vandermost", phoneNumber: "+1 (123)456-7890", email: "joshua.vandermost@cambriancollege.ca", address: "adevevdfrvbgftbdrftgbtdrfbhtrgbhgfnyjnuyjtjnntyjhytjuyrtt"))
     }
     
     func delete(at indexPath: IndexPath){

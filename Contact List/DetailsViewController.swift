@@ -40,6 +40,7 @@ class DetailsViewController: UIViewController {
         guard
             (contact != nil)
         else {return}
+        
         nameTextField.text = contact.name
         phoneNumberTextField.text = contact.phoneNumber
         emailTextField.text = contact.email
@@ -76,11 +77,13 @@ class DetailsViewController: UIViewController {
         
         if contact == nil {
             let newContact = Contact(name: name, phoneNumber: phoneNumber, email: email, address: address)
-            
             contactList.contacts.append(newContact)
             contact = newContact
         } else {
             contact.name = name
+            contact.phoneNumber = phoneNumber
+            contact.email = email
+            contact.address = address
         }
     }
 

@@ -43,15 +43,21 @@ class ContactTableViewController: UITableViewController {
         return contactList.contacts.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactTableViewCell
 
         // Configure the cell...
         let row = indexPath.row
-      
-        cell.textLabel!.text = contactList.contacts[row].name
+        let currentContact = contactList.contacts[row]
+    
+        cell.contact = currentContact
         
+        cell.nameLabel.text = currentContact.name
+        cell.phoneNumberLabel.text = currentContact.phoneNumber
+        cell.emailLabel.text = currentContact.email
+        cell.addressLabel.text = currentContact.address
+        
+    
         return cell
     }
     
