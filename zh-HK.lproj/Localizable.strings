@@ -7,5 +7,6 @@
 */
 
 "Search Contacts" = "搜尋聯絡人";
-
+"Missing Information" = "不完整資料";
+"Please enter a name and phone number to save the contact." = "請輸入姓名和電話號碼以儲存聯絡人。";
 

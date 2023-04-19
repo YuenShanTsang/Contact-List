@@ -29,6 +29,11 @@ class DetailsViewController: UIViewController {
     
     @IBAction func save(_ sender: UIButton) {
         saveContact()
+            
+        if contact == nil {
+            // Contact was not saved successfully
+            return
+        }
         
         UIView.animate(withDuration: 2.5) {
             self.savedLabel.alpha = 1
@@ -82,22 +87,27 @@ class DetailsViewController: UIViewController {
         let email = emailTextField.text!
         let address = addressTextField.text!
 
-            
+        if name.isEmpty || phoneNumber.isEmpty {
+            let title = NSLocalizedString("Missing Information", comment: "Title of alert when required information is missing")
+            let message = NSLocalizedString("Please enter a name and phone number to save the contact.", comment: "Message of alert when required information is missing")
+
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+            return
+        }
+
         if name == "" {return}
         if phoneNumber == "" {return}
-        if email == "" {return}
-        if address == "" {return}
-            
+
         if name == contactNameCheck {return}
         if phoneNumber == contactPhoneNumberCheck {return}
-        if email == contactEmailCheck {return}
-        if address == contactAddressCheck {return}
             
         contactNameCheck = name
         contactPhoneNumberCheck = phoneNumber
-        contactEmailCheck = email
-        contactAddressCheck = address
-        
+
         if contact == nil {
             let newContact = Contact(name: name, phoneNumber: phoneNumber, email: email, address: address)
             contactList.contacts.append(newContact)

@@ -7,5 +7,5 @@
 */
 
 "Search Contacts" = "Search Contacts";
-
-
+"Missing Information" = "Missing Information";
+"Please enter a name and phone number to save the contact." = "Please enter a name and phone number to save the contact.";
