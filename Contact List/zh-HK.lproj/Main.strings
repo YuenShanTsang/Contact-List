@@ -1,0 +1,39 @@
+
+/* Class = "UILabel"; text = "儲存成功！"; ObjectID = "2qk-vg-7kf"; */
+"2qk-vg-7kf.text" = "儲存成功！";
+
+/* Class = "UILabel"; text = "姓名"; ObjectID = "6s2-fZ-rLc"; */
+"6s2-fZ-rLc.text" = "姓名";
+
+/* Class = "UIButton"; configuration.title = "儲存"; ObjectID = "9NA-KL-kb3"; */
+"9NA-KL-kb3.configuration.title" = "儲存";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9NA-KL-kb3"; */
+"9NA-KL-kb3.normalTitle" = "按鈕";
+
+/* Class = "UILabel"; text = "電話號碼"; ObjectID = "DUR-Bg-9CA"; */
+"DUR-Bg-9CA.text" = "電話號碼";
+
+/* Class = "UINavigationItem"; title = "聯絡人資料"; ObjectID = "JbM-o1-sGR"; */
+"JbM-o1-sGR.title" = "聯絡人資料";
+
+/* Class = "UILabel"; text = "地址"; ObjectID = "cr7-6j-qUj"; */
+"cr7-6j-qUj.text" = "地址";
+
+/* Class = "UINavigationItem"; title = "聯絡人"; ObjectID = "cyo-md-aj9"; */
+"cyo-md-aj9.title" = "聯絡人";
+
+/* Class = "UILabel"; text = "電話號碼"; ObjectID = "fJf-RP-UPd"; */
+"fJf-RP-UPd.text" = "電話號碼";
+
+/* Class = "UILabel"; text = "地址"; ObjectID = "tne-JS-0SZ"; */
+"tne-JS-0SZ.text" = "地址";
+
+/* Class = "UILabel"; text = "姓名"; ObjectID = "vMN-qx-5g7"; */
+"vMN-qx-5g7.text" = "姓名";
+
+/* Class = "UILabel"; text = "電郵"; ObjectID = "xv8-EG-eWg"; */
+"xv8-EG-eWg.text" = "電郵";
+
+/* Class = "UILabel"; text = "電郵"; ObjectID = "yZN-hd-12q"; */
+"yZN-hd-12q.text" = "電郵";

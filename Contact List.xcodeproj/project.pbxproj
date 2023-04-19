@@ -20,6 +20,7 @@
 		4BE27A6729EDD0FF00121C59 /* ContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE27A6629EDD0FF00121C59 /* ContactList.swift */; };
 		4BE27A6929EE2D6100121C59 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE27A6829EE2D6100121C59 /* DetailsViewController.swift */; };
 		4BE27A6B29EF1E8000121C59 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE27A6A29EF1E8000121C59 /* ContactTableViewCell.swift */; };
+		4BE27A7329EFA8E900121C59 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BE27A7529EFA8E900121C59 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,9 @@
 		4BE27A6629EDD0FF00121C59 /* ContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactList.swift; sourceTree = "<group>"; };
 		4BE27A6829EE2D6100121C59 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		4BE27A6A29EF1E8000121C59 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		4BE27A6E29EFA19D00121C59 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		4BE27A7029EFA5D000121C59 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
+		4BE27A7429EFA8E900121C59 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 		4B8A13ED29ECCB9700F9941E = {
 			isa = PBXGroup;
 			children = (
+				4BE27A7529EFA8E900121C59 /* Localizable.strings */,
 				4B8A13F829ECCB9700F9941E /* Contact List */,
 				4B8A140F29ECCB9800F9941E /* Contact ListTests */,
 				4B8A141929ECCB9800F9941E /* Contact ListUITests */,
@@ -225,6 +230,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-HK",
 			);
 			mainGroup = 4B8A13ED29ECCB9700F9941E;
 			productRefGroup = 4B8A13F729ECCB9700F9941E /* Products */;
@@ -244,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B8A140629ECCB9800F9941E /* LaunchScreen.storyboard in Resources */,
+				4BE27A7329EFA8E900121C59 /* Localizable.strings in Resources */,
 				4B8A140329ECCB9800F9941E /* Assets.xcassets in Resources */,
 				4B8A140129ECCB9700F9941E /* Main.storyboard in Resources */,
 			);
@@ -317,6 +324,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4B8A140029ECCB9700F9941E /* Base */,
+				4BE27A7029EFA5D000121C59 /* zh-HK */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -325,8 +333,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				4B8A140529ECCB9800F9941E /* Base */,
+				4BE27A6E29EFA19D00121C59 /* zh-HK */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4BE27A7529EFA8E900121C59 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BE27A7429EFA8E900121C59 /* zh-HK */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -336,6 +353,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -396,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

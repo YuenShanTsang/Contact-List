@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Contact List
+
+  Created by Yuen Shan Tsang on 19/4/2023.
+  
+*/
+"Name" = "姓名";
+"Phone Number" = "電話號碼";
+"Email" = "電郵";
+"Address" = "地址";
