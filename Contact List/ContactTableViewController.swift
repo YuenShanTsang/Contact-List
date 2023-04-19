@@ -26,10 +26,8 @@ class ContactTableViewController: UITableViewController {
             } else {
                 navigationItem.searchController = nil
             }
+        
     }
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +37,6 @@ class ContactTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
-    
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +57,9 @@ class ContactTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if let results = searchResults {
+            return results.contacts.count
+        }
         return contactList.contacts.count
     }
 
@@ -69,16 +68,19 @@ class ContactTableViewController: UITableViewController {
 
         // Configure the cell...
         let row = indexPath.row
-        let currentContact = contactList.contacts[row]
-    
-        cell.contact = currentContact
+        
+        var currentContact: Contact
+        if let results = searchResults {
+            currentContact = results.contacts[row]
+        } else {
+            currentContact = contactList.contacts[row]
+        }
         
         cell.nameLabel.text = currentContact.name
         cell.phoneNumberLabel.text = currentContact.phoneNumber
         cell.emailLabel.text = currentContact.email
         cell.addressLabel.text = currentContact.address
         
-    
         return cell
     }
     
@@ -107,7 +109,6 @@ class ContactTableViewController: UITableViewController {
     
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
         contactList.move(from: fromIndexPath, to: to)
     }
     
@@ -150,7 +151,14 @@ class ContactTableViewController: UITableViewController {
 extension ContactTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchText = searchController.searchBar.text ?? ""
-        searchResults = searchText.isEmpty ? contactList : contactList.search(for: searchText)
+        if searchText.isEmpty {
+            searchResults = contactList
+        } else {
+            let filteredContacts = contactList.search(for: searchText)
+            searchResults = ContactList()
+            searchResults.setContacts(filteredContacts)
+        }
         tableView.reloadData()
     }
+
 }

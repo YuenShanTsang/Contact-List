@@ -9,6 +9,7 @@ import Foundation
 
 class ContactList{
     var contacts: [Contact] = []
+    
     private let contactURL: URL = {
         let documentDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = documentDirectories.first!
@@ -16,14 +17,10 @@ class ContactList{
     }()
     
     init(){
-        print(contactURL)
-        
         let data = try? Data(contentsOf: contactURL)
-        
         if data == nil { return }
         
         contacts = try! NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: Contact.self, from: data!)!
-        
     }
     
     func save(){
@@ -34,20 +31,16 @@ class ContactList{
         } catch let err{
             preconditionFailure(err.localizedDescription)
         }
-       
     }
     
     func delete(at indexPath: IndexPath){
         let row = indexPath.row
-        
         contacts.remove(at: row)
     }
     
     func move(from fromIndexPath: IndexPath, to toIndexPath: IndexPath){
         let tmp = contacts[fromIndexPath.row]
-        
         delete(at: fromIndexPath)
-        
         contacts.insert(tmp, at: toIndexPath.row)
     }
     
@@ -55,24 +48,13 @@ class ContactList{
         contacts.append(contact)
     }
     
-    func search(for searchText: String) -> ContactList {
-            let searchResults = ContactList()
-            let normalizedSearchText = searchText.lowercased()
-
-            for contact in contacts {
-                let name = contact.name.lowercased()
-                let phoneNumber = contact.phoneNumber.lowercased()
-                let email = contact.email.lowercased()
-                let address = contact.address.lowercased()
-
-                if name.contains(normalizedSearchText) ||
-                   phoneNumber.contains(normalizedSearchText) ||
-                   email.contains(normalizedSearchText) ||
-                   address.contains(normalizedSearchText) {
-                    searchResults.add(contact)
-                }
-            }
-
-            return searchResults
-        }
+    func setContacts(_ newContacts: [Contact]) {
+        self.contacts = newContacts
+    }
+    
+    func search(for searchText: String) -> [Contact] {
+        let normalizedSearchText = searchText.lowercased()
+        let searchResults = contacts.filter { $0.name.lowercased().contains(normalizedSearchText) }
+        return searchResults
+    }
 }
