@@ -8,13 +8,17 @@
 import Foundation
 
 class Contact: NSObject, NSCoding, NSSecureCoding {
+    
+    // Declare a static property to indicate whether the class supports secure coding
     static var supportsSecureCoding: Bool = true
     
+    // Declare properties
     var name: String
     var phoneNumber: String
     var email: String
     var address: String
     
+    // Initializer
     init(name: String, phoneNumber: String, email: String, address: String) {
         self.name = name
         self.phoneNumber = phoneNumber
@@ -22,6 +26,7 @@ class Contact: NSObject, NSCoding, NSSecureCoding {
         self.address = address
     }
     
+    // Implement the required initializer for NSCoding, which decodes the contact's information from a NSCoder
     required init?(coder: NSCoder) {
         name = coder.decodeObject(forKey: "name") as! String
         phoneNumber = coder.decodeObject(forKey: "phoneNumber") as! String
@@ -29,6 +34,7 @@ class Contact: NSObject, NSCoding, NSSecureCoding {
         address = coder.decodeObject(forKey: "address") as! String
     }
     
+    // Implement the encode method from the NSCoding protocol, which encodes the contact's information using a NSCoder
     func encode(with coder: NSCoder) {
         coder.encode(name, forKey: "name")
         coder.encode(phoneNumber, forKey: "phoneNumber")
@@ -36,5 +42,4 @@ class Contact: NSObject, NSCoding, NSSecureCoding {
         coder.encode(address, forKey: "address")
     }
     
-
 }
