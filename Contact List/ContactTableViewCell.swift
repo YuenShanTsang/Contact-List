@@ -11,7 +11,6 @@ class ContactTableViewCell: UITableViewCell {
 
     var contact: Contact!
     
-    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!

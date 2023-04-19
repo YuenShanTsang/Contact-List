@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -106,7 +107,7 @@
         <scene sceneID="Phi-Yv-bEO">
             <objects>
                 <viewController id="gQ7-hL-Tq4" customClass="DetailsViewController" customModule="Contact_List" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="v22-O8-sOQ">
+                    <view key="view" contentMode="scaleToFill" id="v22-O8-sOQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -165,24 +166,36 @@
                                     <action selector="save:" destination="gQ7-hL-Tq4" eventType="touchUpInside" id="Ea0-V7-OyT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Successfully Saved!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qk-vg-7kf">
+                                <rect key="frame" x="36.666666666666657" y="563" width="320" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="9bi-FC-lRR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemTealColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i00-sb-wJl"/>
                         <color key="backgroundColor" red="1" green="0.92269464639999998" blue="0.91515022069999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9NA-KL-kb3" secondAttribute="trailing" constant="149.66999999999999" id="5Qa-Hg-khd"/>
                             <constraint firstItem="9NA-KL-kb3" firstAttribute="top" secondItem="tdK-BE-KP1" secondAttribute="bottom" constant="8" symbolic="YES" id="6Vr-YH-NHn"/>
                             <constraint firstItem="tdK-BE-KP1" firstAttribute="leading" secondItem="kcE-AN-eTN" secondAttribute="leading" id="8gn-oJ-vpq"/>
                             <constraint firstItem="fJf-RP-UPd" firstAttribute="leading" secondItem="vMN-qx-5g7" secondAttribute="leading" id="9TA-XA-GFE"/>
                             <constraint firstItem="5bK-uF-CuW" firstAttribute="top" secondItem="vMN-qx-5g7" secondAttribute="bottom" constant="8" symbolic="YES" id="BMr-gx-WYg"/>
                             <constraint firstItem="kcE-AN-eTN" firstAttribute="trailing" secondItem="Lqm-K0-mTJ" secondAttribute="trailing" id="BtL-Ud-7aG"/>
                             <constraint firstItem="tdK-BE-KP1" firstAttribute="trailing" secondItem="kcE-AN-eTN" secondAttribute="trailing" id="C9j-n3-KOj"/>
+                            <constraint firstItem="9NA-KL-kb3" firstAttribute="leading" secondItem="i00-sb-wJl" secondAttribute="leading" constant="166.33000000000001" id="E4Z-c7-Ewi"/>
                             <constraint firstItem="kcE-AN-eTN" firstAttribute="top" secondItem="xv8-EG-eWg" secondAttribute="bottom" constant="8" symbolic="YES" id="JNM-Aa-NhO"/>
                             <constraint firstItem="tdK-BE-KP1" firstAttribute="top" secondItem="tne-JS-0SZ" secondAttribute="bottom" constant="8" symbolic="YES" id="Mlj-T4-842"/>
                             <constraint firstItem="fJf-RP-UPd" firstAttribute="top" secondItem="5bK-uF-CuW" secondAttribute="bottom" constant="30" id="Mpe-Ql-Mic"/>
                             <constraint firstItem="vMN-qx-5g7" firstAttribute="trailing" secondItem="5bK-uF-CuW" secondAttribute="trailing" id="P3i-Uv-KQS"/>
                             <constraint firstItem="Lqm-K0-mTJ" firstAttribute="leading" secondItem="fJf-RP-UPd" secondAttribute="leading" id="QiS-Ty-RBk"/>
                             <constraint firstItem="vMN-qx-5g7" firstAttribute="top" secondItem="v22-O8-sOQ" secondAttribute="topMargin" constant="30" id="W7x-rQ-NEa"/>
-                            <constraint firstItem="9NA-KL-kb3" firstAttribute="centerX" secondItem="tdK-BE-KP1" secondAttribute="centerX" id="X5T-Ux-sP5"/>
+                            <constraint firstItem="2qk-vg-7kf" firstAttribute="leading" secondItem="i00-sb-wJl" secondAttribute="leading" constant="36.670000000000002" id="Wut-bi-ltG"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="2qk-vg-7kf" secondAttribute="bottom" constant="234" id="Yqt-l5-x3U"/>
                             <constraint firstItem="kcE-AN-eTN" firstAttribute="leading" secondItem="Lqm-K0-mTJ" secondAttribute="leading" id="ct1-Lf-XAE"/>
                             <constraint firstItem="tne-JS-0SZ" firstAttribute="trailing" secondItem="xv8-EG-eWg" secondAttribute="trailing" id="ekS-Bw-8ju"/>
                             <constraint firstItem="tne-JS-0SZ" firstAttribute="leading" secondItem="xv8-EG-eWg" secondAttribute="leading" id="hD4-qr-03V"/>
@@ -196,14 +209,17 @@
                             <constraint firstItem="tne-JS-0SZ" firstAttribute="top" secondItem="kcE-AN-eTN" secondAttribute="bottom" constant="30" id="uZV-xB-vZ1"/>
                             <constraint firstItem="xv8-EG-eWg" firstAttribute="leading" secondItem="fJf-RP-UPd" secondAttribute="leading" id="v5c-1Z-4rX"/>
                             <constraint firstItem="vMN-qx-5g7" firstAttribute="leading" secondItem="5bK-uF-CuW" secondAttribute="leading" id="w6F-5p-CI9"/>
+                            <constraint firstItem="i00-sb-wJl" firstAttribute="trailing" secondItem="2qk-vg-7kf" secondAttribute="trailing" constant="36.329999999999998" id="zkP-rM-UOq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contact Details" id="JbM-o1-sGR"/>
                     <connections>
                         <outlet property="addressTextField" destination="tdK-BE-KP1" id="5hX-P7-WQj"/>
                         <outlet property="emailTextField" destination="kcE-AN-eTN" id="vsF-iC-tPu"/>
-                        <outlet property="nameTextField" destination="5bK-uF-CuW" id="E6y-gZ-UWd"/>
+                        <outlet property="nameTextField" destination="5bK-uF-CuW" id="W7E-0b-BVu"/>
                         <outlet property="phoneNumberTextField" destination="Lqm-K0-mTJ" id="s9z-10-4Z8"/>
+                        <outlet property="savedConstraint" destination="Wut-bi-ltG" id="LLJ-IB-dq2"/>
+                        <outlet property="savedLabel" destination="2qk-vg-7kf" id="ZVk-yy-XjS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COy-5M-qwb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -233,4 +249,9 @@
     <inferredMetricsTieBreakers>
         <segue reference="Wk1-TQ-hiC"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

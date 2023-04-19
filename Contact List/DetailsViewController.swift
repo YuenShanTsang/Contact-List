@@ -18,20 +18,43 @@ class DetailsViewController: UIViewController {
     
     var contact: Contact!
     
+    var width: CGFloat!
+    
+    @IBOutlet weak var savedConstraint: NSLayoutConstraint!
+    @IBOutlet weak var savedLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     
-    @IBAction func save(_ sender: Any) {
+    @IBAction func save(_ sender: UIButton) {
         saveContact()
+        
+        UIView.animate(withDuration: 2.5) {
+            self.savedLabel.alpha = 1
+        }
+        
+        UIView.animate(withDuration: 5){
+            [self] in
+            savedConstraint.constant = width
+            view.layoutIfNeeded()
+        } completion: {
+            [self] _ in
+            
+            if let navigationController = self.navigationController {
+                navigationController.popViewController(animated: true)
+            } else {
+                dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-
+        width = view.frame.width
+        
+        savedLabel.alpha = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
