@@ -11,6 +11,26 @@ class ContactTableViewController: UITableViewController {
 
     var contactList: ContactList!
     
+    var searchResults: ContactList!
+    
+    @IBAction func search(_ sender: UIBarButtonItem) {
+        
+        if navigationItem.searchController == nil {
+                let searchController = UISearchController(searchResultsController: nil)
+                searchController.searchResultsUpdater = self
+                searchController.obscuresBackgroundDuringPresentation = false
+                searchController.searchBar.placeholder = NSLocalizedString("Search Contacts", comment: "")
+                navigationItem.searchController = searchController
+                navigationItem.hidesSearchBarWhenScrolling = false
+                definesPresentationContext = true
+            } else {
+                navigationItem.searchController = nil
+            }
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +39,8 @@ class ContactTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
-        
+    
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,4 +145,12 @@ class ContactTableViewController: UITableViewController {
         }
     }
 
+}
+
+extension ContactTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchText = searchController.searchBar.text ?? ""
+        searchResults = searchText.isEmpty ? contactList : contactList.search(for: searchText)
+        tableView.reloadData()
+    }
 }

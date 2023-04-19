@@ -50,4 +50,29 @@ class ContactList{
         
         contacts.insert(tmp, at: toIndexPath.row)
     }
+    
+    func add(_ contact: Contact) {
+        contacts.append(contact)
+    }
+    
+    func search(for searchText: String) -> ContactList {
+            let searchResults = ContactList()
+            let normalizedSearchText = searchText.lowercased()
+
+            for contact in contacts {
+                let name = contact.name.lowercased()
+                let phoneNumber = contact.phoneNumber.lowercased()
+                let email = contact.email.lowercased()
+                let address = contact.address.lowercased()
+
+                if name.contains(normalizedSearchText) ||
+                   phoneNumber.contains(normalizedSearchText) ||
+                   email.contains(normalizedSearchText) ||
+                   address.contains(normalizedSearchText) {
+                    searchResults.add(contact)
+                }
+            }
+
+            return searchResults
+        }
 }

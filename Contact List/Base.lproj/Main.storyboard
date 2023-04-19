@@ -91,12 +91,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts" id="cyo-md-aj9">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="T1J-Nv-45s">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <segue destination="gQ7-hL-Tq4" kind="show" identifier="add" id="4M7-TJ-5aT"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="T1J-Nv-45s">
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="gQ7-hL-Tq4" kind="show" identifier="add" id="4M7-TJ-5aT"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="search" id="Rae-Cv-Btg">
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="search:" destination="RPT-Es-7wy" id="cft-K1-ria"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2X-Au-S5x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
