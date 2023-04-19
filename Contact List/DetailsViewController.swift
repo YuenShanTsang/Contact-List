@@ -20,6 +20,9 @@ class DetailsViewController: UIViewController {
     
     var width: CGFloat!
     
+    var contactSaved = false
+
+    
     @IBOutlet weak var savedConstraint: NSLayoutConstraint!
     @IBOutlet weak var savedLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
@@ -27,10 +30,11 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     
+    
     @IBAction func save(_ sender: UIButton) {
         saveContact()
             
-        if contact == nil {
+        if contact == nil || !contactSaved {
             // Contact was not saved successfully
             return
         }
@@ -96,14 +100,27 @@ class DetailsViewController: UIViewController {
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
+            contactSaved = false
             return
         }
 
-        if name == "" {return}
-        if phoneNumber == "" {return}
+        if name == "" {
+                contactSaved = false
+                return
+            }
+            if phoneNumber == "" {
+                contactSaved = false
+                return
+            }
 
-        if name == contactNameCheck {return}
-        if phoneNumber == contactPhoneNumberCheck {return}
+            if name == contactNameCheck {
+                contactSaved = true
+                return
+            }
+            if phoneNumber == contactPhoneNumberCheck {
+                contactSaved = true
+                return
+            }
             
         contactNameCheck = name
         contactPhoneNumberCheck = phoneNumber
@@ -118,6 +135,8 @@ class DetailsViewController: UIViewController {
             contact.email = email
             contact.address = address
         }
+        
+        contactSaved = true
     }
 
     /*
